@@ -32,6 +32,7 @@ def extract_text_from_pdf(pdf_data):
 
     for i, page in enumerate(pages):
         text.append(pytesseract.image_to_string(page, lang="rus"))
+        
         # Update progress bar
         progress = (i + 1) / total_pages  # Calculate progress percentage
         my_bar.progress(progress, text=f"{progress_text} ({i + 1}/{total_pages})")
